@@ -27,6 +27,7 @@ jobs:
       working-directory: ${{env.SAMPLE_TO_BUILD_DEPLOY}}
       run: |
         pwd
+        [ -f "package-lock.json" ] && rm package-lock.json
         npm install
     # install gulp if mac
     - name: Run npm i -g gulp
