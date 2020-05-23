@@ -5,8 +5,8 @@ on: push
 # Variables that are available for all the jobs in the workflow
 env:
   APP_FILE_PATH: '**/*.sppkg'
-  SMAPLE_TO_BUILD_DEPLOY: './samples/jquery-application-toastr'
-  SEND_MAIL: 'true'
+  SAMPLE_TO_BUILD_DEPLOY: './samples/jquery-application-toastr'
+  SEND_MAIL: 'false'
 
 jobs:
   build-and-deploy:
@@ -23,19 +23,20 @@ jobs:
       with:
         node-version: 10.x
     # npm install
-    - name: Run npm ci
-      working-directory: ${{ env.SMAPLE_TO_BUILD_DEPLOY }}
-      run: npm ci
-    
+    - name: Run npm install
+      working-directory: ${{env.SAMPLE_TO_BUILD_DEPLOY}}
+      run: |
+        rm package-lock.json
+        npm install
     # install gulp if mac
     - name: Run npm i -g gulp
       run: npm i -g gulp
-      working-directory: ${{ env.SMAPLE_TO_BUILD_DEPLOY }}
+      working-directory: ${{ env.SAMPLE_TO_BUILD_DEPLOY }}
       if: runner.os == 'macOS'
     
     # gulp bundle and package solution
     - name: Bundle and package
-      working-directory: ${{ env.SMAPLE_TO_BUILD_DEPLOY }}
+      working-directory: ${{ env.SAMPLE_TO_BUILD_DEPLOY }}
       run: |
         gulp bundle --ship
         gulp package-solution --ship    
