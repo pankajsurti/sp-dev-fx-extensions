@@ -39,7 +39,7 @@ jobs:
     - name: Bundle and package
       working-directory: ${{ env.SAMPLE_TO_BUILD_DEPLOY }}
       run: |
-        gulp bundle --ship
+        gulp bundle --ship --warnoff
         gulp package-solution --ship
     - name: Set Date
       id: get-date
