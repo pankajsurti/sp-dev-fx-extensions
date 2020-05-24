@@ -39,7 +39,8 @@ jobs:
     - name: Bundle and package
       working-directory: ${{ env.SAMPLE_TO_BUILD_DEPLOY }}
       run: |
-        gulp bundle --ship --warnoff
+        gulp clean
+        gulp bundle --ship --debug
         gulp package-solution --ship
     - name: Set pkgname
       id: get-pkgname
