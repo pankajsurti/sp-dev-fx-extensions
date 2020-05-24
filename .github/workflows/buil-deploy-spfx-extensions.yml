@@ -40,7 +40,7 @@ jobs:
       working-directory: ${{ env.SAMPLE_TO_BUILD_DEPLOY }}
       run: |
         gulp bundle --ship --warnoff
-        gulp package-solution --ship
+        gulp package-solution --ship --warnoff
     - name: Set pkgname
       id: get-pkgname
       run: |
