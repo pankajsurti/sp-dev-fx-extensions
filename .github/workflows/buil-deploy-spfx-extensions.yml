@@ -41,13 +41,13 @@ jobs:
       run: |
         gulp bundle --ship --warnoff
         gulp package-solution --ship
-    - name: Set Date
-      id: get-date
+    - name: Set pkgname
+      id: get-pkgname
       run: |
         echo ::set-output name=pkgname::$(find . -name *.sppkg)
     - name: Use the output
       run: |
-        echo 'The output date is ${{ steps.get-date.outputs.pkgname }}'     
+        echo 'The output pkgname is ${{ steps.get-pkgname.outputs.pkgname }}'     
     # Login to tenant using action-cli-login
     - name: Office 365 CLI Login
       uses: pnp/action-cli-login@v1.0.0
@@ -59,7 +59,7 @@ jobs:
       id: o365clideploy # optional - use if output needs to be used
       uses: pnp/action-cli-deploy@v1.0.0
       with:
-        APP_FILE_PATH: ${{ steps.get-date.outputs.pkgname }}
+        APP_FILE_PATH: ${{ steps.get-pkgname.outputs.pkgname }}
         SKIP_FEATURE_DEPLOYMENT: false
         OVERWRITE: true
     # Send an email using action-cli-runscript
