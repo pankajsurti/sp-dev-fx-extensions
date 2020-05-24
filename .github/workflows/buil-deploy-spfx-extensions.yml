@@ -40,9 +40,7 @@ jobs:
       working-directory: ${{ env.SAMPLE_TO_BUILD_DEPLOY }}
       run: |
         gulp bundle --ship --warnoff
-        echo 'Before calling package-solution'
-        gulp package-solution --ship
-        echo 'Afte calling package-solution'
+        gulp package-solution --ship 2> /dev/null
       - name: Set pkgname
       id: get-pkgname
       run: |
