@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "my-first-list-view-customizer-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/myFirstListViewCustomizer/MyFirstListViewCustomizerCommandSet.js",
+          "manifest": "./src/extensions/myFirstListViewCustomizer/MyFirstListViewCustomizerCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "MyFirstListViewCustomizerCommandSetStrings": "lib/extensions/myFirstListViewCustomizer/loc/{locale}.js"
+  }
+}
