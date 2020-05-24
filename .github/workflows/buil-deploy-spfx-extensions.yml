@@ -36,12 +36,15 @@ jobs:
       if: runner.os == 'macOS'
     
     # gulp bundle and package solution
-    - name: Bundle and package
+    - name: Bundle ${{ env.SAMPLE_TO_BUILD_DEPLOY }}
       working-directory: ${{ env.SAMPLE_TO_BUILD_DEPLOY }}
       run: |
         gulp bundle --ship --warnoff
-        gulp package-solution --ship 2> /dev/null
-      - name: Set pkgname
+    - name: Package ${{ env.SAMPLE_TO_BUILD_DEPLOY }}
+      working-directory: ${{ env.SAMPLE_TO_BUILD_DEPLOY }}
+      run: |
+        gulp package-solution --ship 
+    - name: Set pkgname
       id: get-pkgname
       run: |
         echo ::set-output name=pkgname::$(find . -name *.sppkg)
@@ -55,7 +58,7 @@ jobs:
         ADMIN_USERNAME:  ${{ secrets.adminUsername }}
         ADMIN_PASSWORD:  ${{ secrets.adminPassword }}
     # Deploy package to tenant using action-cli-deploy
-    - name: Office 365 CLI Deploy
+    - name: Office 365 CLI Deploy ${{ steps.get-pkgname.outputs.pkgname }}
       id: o365clideploy # optional - use if output needs to be used
       uses: pnp/action-cli-deploy@v1.0.0
       with:
