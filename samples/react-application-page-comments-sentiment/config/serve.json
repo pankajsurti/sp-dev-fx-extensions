@@ -9,7 +9,7 @@
         "ac0bbe10-482e-471d-ae8b-e71162333c3e": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "textAnalyticsApiKey": "[YOUR API KEY]"
+            "textAnalyticsApiKey": "01f48844ed3b4773b84295f4a4328438"
           }
         }
       }
@@ -20,7 +20,7 @@
         "ac0bbe10-482e-471d-ae8b-e71162333c3e": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "textAnalyticsApiKey": "[YOUR API KEY]"
+            "textAnalyticsApiKey": "01f48844ed3b4773b84295f4a4328438"
           }
         }
       }
