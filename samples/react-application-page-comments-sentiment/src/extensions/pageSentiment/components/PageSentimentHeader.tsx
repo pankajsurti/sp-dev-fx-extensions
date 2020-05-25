@@ -20,7 +20,7 @@ export default class PageSentimentHeader extends React.Component<
   IPageSentimentHeaderState
 > {
 //  private _cognitiveServicesTextUrl: string = `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/`;
-  private _cognitiveServicesTextUrl: string = `https://spfx-app-customizer-test.cognitiveservices.azure.com/`;
+  private _cognitiveServicesTextUrl: string = `https://spfx-app-customizer-test.cognitiveservices.azure.com/text/analytics/v2.1/`;
   private _baseUrl: string;
   private _listId: string;
   private _listItemId: string;
