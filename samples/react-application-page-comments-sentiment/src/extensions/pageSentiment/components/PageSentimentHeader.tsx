@@ -181,12 +181,13 @@ export default class PageSentimentHeader extends React.Component<
     const requestHeaders: Headers = new Headers();
     requestHeaders.append("Content-type", "application/json");
     requestHeaders.append("Cache-Control", "no-cache");
+    console.log(`Adding Ocp-Apim-Subscription-Key` + this.props.textAnalyticsApiKey);
     requestHeaders.append(
       "Ocp-Apim-Subscription-Key",
-      this.props.textAnalyticsApiKey
+      "01f48844ed3b4773b84295f4a4328438"
     );
 
-    return requestHeaders;
+    return requestHeaders;    
   }
 
   private _isContentPage(): boolean {
