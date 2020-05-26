@@ -9,7 +9,7 @@
         "3013b2a1-5a5a-4f23-aaac-2b12791eeba4": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "bingSearchApiKey": "[BING_API_KEY]"
+            "bingSearchApiKey": "fd836ceaa8c84fa8b84caa67958bb615"
           }
         }
       }
@@ -20,7 +20,7 @@
         "3013b2a1-5a5a-4f23-aaac-2b12791eeba4": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "bingSearchApiKey": "BING_API_KEY"
+            "bingSearchApiKey": "fd836ceaa8c84fa8b84caa67958bb615"
           }
         }
       }
