@@ -203,7 +203,8 @@ export default class RelatedBingNews extends React.Component<IRelatedBingNewsPro
     const requestHeaders: Headers = new Headers();
     requestHeaders.append("Content-type", "application/json");
     requestHeaders.append("Cache-Control", "no-cache");
-    requestHeaders.append("Ocp-Apim-Subscription-Key", this.props.bingSearchApiKey);
+    //requestHeaders.append("Ocp-Apim-Subscription-Key", this.props.bingSearchApiKey);
+    requestHeaders.append("Ocp-Apim-Subscription-Key", "fd836ceaa8c84fa8b84caa67958bb615");
 
     return requestHeaders;
   }
