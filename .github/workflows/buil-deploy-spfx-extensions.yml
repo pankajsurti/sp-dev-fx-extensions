@@ -5,7 +5,7 @@ on: push
 # Variables that are available for all the jobs in the workflow
 env:
   APP_FILE_PATH: '**/*.sppkg'
-  SAMPLE_TO_BUILD_DEPLOY: './samples/react-application-page-related-bing-news'
+  SAMPLE_TO_BUILD_DEPLOY: './samples/react-jump-to-folder'
   SEND_MAIL: 'false'
 
 jobs:
