@@ -8,6 +8,7 @@ env:
   SAMPLE_TO_BUILD_DEPLOY: './samples/react-jump-to-folder'
   SEND_MAIL: 'false'
 
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
